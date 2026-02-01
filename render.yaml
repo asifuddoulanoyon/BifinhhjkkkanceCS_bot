@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bifinance-support-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py   # change to your entry file name
+    envVars:
+      - key: BOT_TOKEN
+        sync: false   # we set manually later
+      - key: PORT
+        value: "10000"   # Render expects this
